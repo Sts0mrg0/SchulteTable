@@ -10,9 +10,9 @@ checkBlock();
 
 function reloadRecord() {
   let sortedRecord = recordArr.sort( (a, b) => a - b );
-  $(".n1").html(sortedRecord[0] + " секунд");
-  $(".n2").html(sortedRecord[1] + " секунд");
-  $(".n3").html(sortedRecord[2] + " секунд");
+  $(".n1").html((sortedRecord[0]) ? (sortedRecord[0] + " секунд") : " ");
+  $(".n2").html((sortedRecord[1]) ? (sortedRecord[1] + " секунд") : " ");
+  $(".n3").html((sortedRecord[2]) ? (sortedRecord[2] + " секунд") : " ");
 }
 
 
