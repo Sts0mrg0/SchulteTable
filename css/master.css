@@ -7,12 +7,42 @@
 
 .title {
 font-family: sans-serif;
-color: gray;
+color: #4a4646;
+}
+
+.timer {
+  font-family: sans-serif;
+  margin-top: 10px;
+  color: darkgray;
 }
 
 .table {
+
 }
 
+.recordtable_title {
+    font-family: sans-serif;
+}
+
+table .recordTable {
+  width: 400px;
+}
+
+td {
+  height: 35px;
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: #e4fbdb;
+}
+
+.recordTable tr td:first-child {
+  width: 25px;
+  text-align: right;
+}
+
+.recordTable tr td:nth-child(2) {
+  width: 100px;
+}
 
 .line {
   flex-shrink: 1;

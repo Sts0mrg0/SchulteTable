@@ -1,10 +1,19 @@
 $(document).ready(function() {
 
+
   let set = new Set();
+  let recordArr = [];
 
 
 restartTable();
 checkBlock();
+
+function reloadRecord() {
+  let sortedRecord = recordArr.sort( (a, b) => a - b );
+  $(".n1").html(sortedRecord[0]);
+  $(".n2").html(sortedRecord[1]);
+  $(".n3").html(sortedRecord[2]);
+}
 
 
 
@@ -13,6 +22,12 @@ function restartTable() {
   set.clear();
 
   set.add("1");
+
+  stopTimer();
+
+  reloadRecord();
+
+  $(".timer").html(sec + " секунд");
 
   $(".block").animate({
       opacity: 1,
@@ -31,7 +46,6 @@ function restartTable() {
 
   let counter = 1;
   for (let i of mixedArr) {
-    console.log(i);
     $(".b" + counter).html(i);
     counter += 1;
   }
@@ -45,6 +59,8 @@ function checkBlock() {
 
   let clicked = $(this).html();
 
+  if (clicked == 1) initTimer();
+
   if (set.has(clicked)) {
     $(this).html(" ");
     $(this).animate({
@@ -54,12 +70,16 @@ function checkBlock() {
   }
 
   if (set.has("26")) {
-    alert("Поздравляю!");
-    // restartTable();
+    recordArr.push(sec);
+    record = Math.min.apply(null, recordArr);
+    alert("Поздравляю!, Ваш рекорд - " + sec + "секунд!");
+    stopTimer();
+    reloadRecord();
     }
 
   });
 }
+
 
 
 });
