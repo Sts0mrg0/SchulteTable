@@ -10,6 +10,16 @@ font-family: sans-serif;
 color: #4a4646;
 }
 
+.description {
+  width: 400px;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+
+
 .timer {
   font-family: sans-serif;
   margin-top: 10px;
@@ -17,7 +27,54 @@ color: #4a4646;
 }
 
 .table {
+  position: relative;
+}
 
+.table .popup {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  text-align: center;
+  width: 350px;
+  height: 190px;
+  background-color: #86B7FF;
+  border: 1px solid gray;
+  border-radius: 15px;
+  font-family: sans-serif;
+  z-index: 999;
+}
+
+.popup h1 {
+  margin-bottom: 10px;
+}
+
+.popup h3 {
+  margin: 5px 0 15px 0;
+}
+
+
+
+
+
+.okbtn {
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+}
+
+.okbtn:hover {background: rgb(53, 167, 110)}
+
+.okbtn:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
 }
 
 .recordtable_title {

@@ -10,9 +10,9 @@ checkBlock();
 
 function reloadRecord() {
   let sortedRecord = recordArr.sort( (a, b) => a - b );
-  $(".n1").html((sortedRecord[0]) ? (sortedRecord[0] + " секунд") : " ");
-  $(".n2").html((sortedRecord[1]) ? (sortedRecord[1] + " секунд") : " ");
-  $(".n3").html((sortedRecord[2]) ? (sortedRecord[2] + " секунд") : " ");
+  $(".n1").html((sortedRecord[0]) ? (sortedRecord[0]/100 + " сек.") : " ");
+  $(".n2").html((sortedRecord[1]) ? (sortedRecord[1]/100 + " сек.") : " ");
+  $(".n3").html((sortedRecord[2]) ? (sortedRecord[2]/100 + " сек.") : " ");
 }
 
 
@@ -72,13 +72,27 @@ function checkBlock() {
   if (set.has("26")) {
     recordArr.push(sec);
     record = Math.min.apply(null, recordArr);
-    alert("Поздравляю!, Ваш рекорд - " + sec + "секунд!");
+    showPopup();
     stopTimer();
     reloadRecord();
     }
 
   });
 }
+
+$(".okbtn").click(function() { hidePopup() });
+
+function showPopup() {
+  let sortedRecord = recordArr.sort( (a, b) => a - b );
+  $(".currentresult").html("Ваш результат - " + sec/100);
+  $(".recordresult").html((sortedRecord[0]) ? ("Ваш рекорд - " + sortedRecord[0]/100 + " сек.") : " ");
+  $(".popup").css("display", "block");
+}
+
+function hidePopup() {
+  $(".popup").css("display", "none")
+}
+
 
 
 

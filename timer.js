@@ -3,11 +3,11 @@ let timerID = 0;
 
 function changeTimer() {
   sec++;
-  $(".timer").html(sec + " секунд");
+  $(".timer").html(sec/100 + " секунд");
 }
 
 function initTimer() {
-  timerID = setInterval(changeTimer, 1000);
+  timerID = setInterval(changeTimer, 10);
 }
 
 function stopTimer() {
